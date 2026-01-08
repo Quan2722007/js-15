@@ -67,4 +67,13 @@ body {
         background-color: rgba(255, 37, 37, 0.784);
         color: white;
     }
+    .dl {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.deleted {
+    width: 24px;
+    height: 24px;
 }
