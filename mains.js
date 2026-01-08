@@ -29,6 +29,7 @@ function numberButton() {
     });
     operation.forEach((button) => {
         button.addEventListener("click", () => {
+            if (arrayScreen.join("").length >= 15) return;
             const value = button.innerText;
             arrayScreen.push(value);
             currentInput.innerText = arrayScreen.join("");
@@ -49,6 +50,9 @@ equal.addEventListener("click", () => {
             .replace(/x/g, "*")
             .replace(/÷/g, "/");
         const result = eval(expression);
+        if (!isFinite(result) || isNaN(result)) {
+            throw new Error("Math Error");
+        }
         answerScreen.innerText = result.toFixed(10);
 
         arrayScreen = [result.toFixed(10).toString()];
