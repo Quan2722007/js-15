@@ -53,9 +53,9 @@ equal.addEventListener("click", () => {
         if (!isFinite(result) || isNaN(result)) {
             throw new Error("Math Error");
         }
-        answerScreen.innerText = result.toFixed(10);
+        answerScreen.innerText = result.toPrecision(8);
 
-        arrayScreen = [result.toFixed(10).toString()];
+        arrayScreen = [result.toPrecision(8).toString()];
         currentInput.innerText = arrayScreen.join("");
     } catch (error) {
         alert("Error");
